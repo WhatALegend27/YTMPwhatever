@@ -35,9 +35,7 @@ def install_dependencies():
                 print("Dependencies could not be installed. Dumping errors to 'error.log'")
                 create_error_log()
                 exit()
-
-        print("Dependencies installed successfully. Continuing to program...")
-        time.sleep(3)
+        
     else:
         print("Program cannot be run without dependencies installed. Exiting...")
         time.sleep(3)
@@ -47,8 +45,21 @@ def install_dependencies():
 def check_for_dependencies():
     import time
     try:
+        need_to_install = False
         print("Checking for dependencies...")
         time.sleep(1.5)
         import magic, validators, ffprobe
     except ModuleNotFoundError:
+        need_to_install = True
         install_dependencies()
+    except:
+        print("Another error occurred while checking for dependencies. Dumping errors to 'error.log' and exiting...")
+        create_error_log()
+        time.sleep(3)
+        exit()
+    finally:
+        if need_to_install:
+            print("Dependencies installed successfully. Continuing to program...")
+        else:
+            print("Dependencies found. Continuing to program...")
+        time.sleep(3)
