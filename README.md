@@ -1,4 +1,6 @@
 # YTMPwhatever
+**WARNING: THIS PROGRAM IS CURRENTLY UNDER HEAVY CONSTRUCTION AND DOES NOT WORK**
+
 A program that neatly packages FFmpeg (among other tools) into a singular, easy-to-use application.
 
 This project is inspired by QuirtTheDirt's mTool, which has a similar purpose. However, this program will offer slightly different features and quality-of-life changes that make the program more user-friendly.
